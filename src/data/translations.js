@@ -1,0 +1,300 @@
+// Comprehensive English & Hindi Translations for KosiManthan
+export const translations = {
+  en: {
+    // Navigation
+    brandName: "KosiManthan",
+    brandSubtitle: "Flood Relief & Agricultural Recovery Platform",
+    navHome: "Home",
+    navEarlyWarning: "Early Warning",
+    navLogistics: "Logistics",
+    navDamageReport: "Damage Report",
+    navClaims: "Claims & DBT",
+    navSoilRecovery: "Soil Recovery",
+    navEmergency: "Emergency & SOS",
+    navFarmerDash: "Farmer Portal",
+    navAdminDash: "Command Center",
+    navSwitchRole: "Switch Role",
+    quickSOS: "EMERGENCY SOS",
+    offlineMode: "Offline Mode Active",
+    onlineMode: "Connected to Kosi Grid",
+
+    // Roles
+    roleFarmer: "Farmer",
+    roleTransporter: "Transporter",
+    roleOfficer: "Govt Officer",
+    roleNGO: "NGO Volunteer",
+    roleAdmin: "Disaster Admin",
+
+    // Landing Page
+    heroTitle: "From Flood Warning to Agricultural Recovery",
+    heroSubtitle: "An integrated technology and logistics platform for Kosi Basin flood early warning, 24–48h asset evacuation, AI-powered crop damage verification, and post-flood soil recovery.",
+    btnCheckFloodRisk: "Check Flood Risk",
+    btnReportCropDamage: "Report Crop Damage",
+    btnGetRecoveryPlan: "Get Soil Recovery Plan",
+    btnEmergencyDashboard: "Emergency Command",
+    evacuationCountdown: "Estimated Evacuation Window Remaining",
+    hoursRemaining: "Hours Ahead of Water Peak",
+    liveDischarge: "Birpur Barrage Discharge",
+    affectedVillagesCount: "Vulnerable Villages Monitored",
+    evacuatedTonnage: "Harvest Tonnes Safely Evacuated",
+    claimsProcessed: "Claims AI-Verified & Processed",
+
+    // Solution Cards
+    pillar1Title: "Early Flood Warning",
+    pillar1Desc: "Live river gauge telemetry, discharge curves, and offline radio/mesh flood broadcast alerts before water reaches fields.",
+    pillar2Title: "Pre-Flood Logistics",
+    pillar2Desc: "GPS-matched transport network to evacuate harvested crops, seeds, livestock, and pumps within the critical 24–48h window.",
+    pillar3Title: "AI Damage Verification",
+    pillar3Desc: "Computer vision analysis of geo-tagged field photos to calculate crop loss %, silt deposition, and speed up DBT compensation.",
+    pillar4Title: "Soil & Farm Recovery",
+    pillar4Desc: "Satellite sand-casting maps + IoT soil health testing + AI Agronomist recommendations for rapid land restoration.",
+
+    // 12 Step Flow
+    flowTitle: "Complete Flood Response & Agricultural Recovery Cycle",
+    flowSubtitle: "How KosiManthan connects technology, frontline logistics, and state machinery from danger warning to next crop harvest.",
+
+    // Early Warning Module
+    ewTitle: "Kosi Basin Early Warning & Gauge Telemetry",
+    ewSubtitle: "Real-time water levels, telemetry sensors, barrage discharge, and emergency safe shelters along the Kosi embankment.",
+    riskSafe: "Safe Level",
+    riskWatch: "Watch Alert",
+    riskWarning: "Flood Warning",
+    riskCritical: "Critical Danger",
+    currentDischarge: "Current Flow Rate",
+    dangerMark: "Danger Mark",
+    waterTrend: "Water Level Trend",
+    safeShelters: "Designated Safe Shelters",
+    offlineRelayActive: "Offline Mesh & FM Radio Broadcast Active (87.5 MHz / LoRa Node KOSI-04)",
+
+    // Logistics Module
+    logisticsTitle: "Pre-Flood Asset Evacuation & Logistics Hub",
+    logisticsSubtitle: "Mobilizing rural tractors, mini-trucks, and storage warehouses in the 24–48h pre-inundation window to save crops and machinery.",
+    requestTransportBtn: "Request Asset Evacuation",
+    transporterFleet: "Available Transport Fleet",
+    evacFormTitle: "Farmer Harvest & Equipment Evacuation Request",
+    cropTypeLabel: "Crop / Asset to Evacuate",
+    quantityLabel: "Quantity (Tonnes / Bags)",
+    equipmentLabel: "Equipment (Pumps, Threshers, Cattle)",
+    destinationLabel: "Safe Destination Warehouse",
+    urgencyLabel: "Urgency Level",
+    submitEvacRequest: "Broadcast Evacuation Request",
+    matchedStatus: "Matched with Transporter",
+    pendingStatus: "Seeking Nearby Transport",
+    acceptRide: "Accept & Dispatch",
+
+    // Damage Report Module
+    damageTitle: "AI-Powered Crop Damage Assessment",
+    damageSubtitle: "Upload geo-tagged field photos to receive instant neural loss estimation, silt thickness calculation, and auto-generate claims.",
+    uploadPhotos: "Upload Field Damage Photos",
+    analyzingAI: "Running KosiVision AI Multi-Spectral Loss Analysis...",
+    aiAssessmentResult: "AI Loss Assessment Summary",
+    estimatedLoss: "Estimated Crop Loss",
+    aiConfidence: "AI Model Confidence",
+    vegetativeRot: "Vegetative Damage",
+    siltDeposition: "Silt / Sand Casting Depth",
+    generateClaimBtn: "Generate Verified Compensation Claim",
+
+    // Claims Module
+    claimsTitle: "Insurance & DBT Compensation Portal",
+    claimsSubtitle: "Transparent government and insurance settlement workflow with digital verification seals and Direct Benefit Transfer.",
+    claimId: "Claim ID",
+    farmer: "Farmer Name",
+    crop: "Crop & Variety",
+    lossPct: "Loss %",
+    estLossValue: "Estimated Loss (₹)",
+    status: "Lifecycle Status",
+    action: "Action",
+    approveClaim: "Approve Payout",
+    rejectClaim: "Reject / Re-survey",
+    viewCertificate: "View Official Dossier",
+    dbtStatus: "DBT Direct Bank Transfer",
+
+    // Soil Recovery Module
+    soilTitle: "Post-Flood Soil Recovery & Agronomy Engine",
+    soilSubtitle: "Satellite silt mapping, IoT soil nutrient sensors (NPK & pH), and tailored AI recovery guidance for flood-affected land.",
+    soilHealthScore: "Soil Health Index",
+    sandThickness: "Sand Deposition Depth",
+    recoveryCrop: "Recommended Recovery Crop",
+    aiPrescription: "AI Fertilizer & Reclamation Prescription",
+    recoveryTimeline: "Estimated Land Recovery Timeline",
+    generateSoilPlan: "Generate Soil Rehabilitation Plan",
+
+    // Emergency Module
+    emergencyTitle: "Emergency Disaster Ground Operations",
+    emergencySubtitle: "Live rescue dispatch, NDRF/SDRF watercraft fleet monitoring, drone aerial surveillance, and citizen SOS triage.",
+    trappedPersons: "Citizens Awaiting Rescue",
+    boatFleetTitle: "Rescue Boat & Raft Fleet",
+    droneSurveillanceTitle: "Aerial Drone Reconnaissance",
+    dispatchBoat: "Dispatch Rescue Craft",
+    markRescued: "Mark as Safely Evacuated",
+
+    // Farmer Dashboard
+    farmerDashTitle: "Kisan Dashboard - Flood Readiness & Recovery",
+    farmerWelcome: "Namaste, Kisan Ramesh Kumar",
+    actionEmergencySOS: "Emergency SOS",
+    actionRequestTransport: "Request Transport",
+    actionReportDamage: "Report Crop Damage",
+    actionSoilHealth: "Check Soil Health",
+    actionTrackClaim: "Track Claim Payout",
+
+    // Admin Dashboard
+    adminTitle: "State Disaster & Recovery Command Center",
+    adminSubtitle: "Multi-tier administrative monitoring for Supaul, Saharsa, Madhepura, and Khagaria districts.",
+    filterDistrict: "District Filter",
+    filterBlock: "Block Filter",
+    filterRisk: "Risk Level Filter",
+    totalSubmergedHa: "Total Hectares Inundated",
+    totalLossVal: "Total Crop Loss Valuation",
+    evacTonnageStat: "Grain Evacuated",
+    dbtDisbursedStat: "DBT Disbursed"
+  },
+
+  hi: {
+    // Navigation
+    brandName: "कोसी मंथन",
+    brandSubtitle: "बाढ़ राहत एवं कृषि पुनरुद्धार मंच",
+    navHome: "मुख्य पृष्ठ",
+    navEarlyWarning: "पूर्व चेतावनी",
+    navLogistics: "परिवहन/लॉजिस्टिक्स",
+    navDamageReport: "फसल क्षति रिपोर्ट",
+    navClaims: "मुआवजा एवं दावा",
+    navSoilRecovery: "मृदा पुनरुद्धार",
+    navEmergency: "आपातकालीन बचाव (SOS)",
+    navFarmerDash: "किसान पोर्टल",
+    navAdminDash: "कमांड सेंटर",
+    navSwitchRole: "भूमिका बदलें",
+    quickSOS: "आपातकालीन SOS",
+    offlineMode: "ऑफलाइन मोड सक्रिय",
+    onlineMode: "कोसी नेटवर्क से जुड़ा",
+
+    // Roles
+    roleFarmer: "किसान",
+    roleTransporter: "वाहन चालक / ट्रांसपोर्टर",
+    roleOfficer: "सरकारी अधिकारी",
+    roleNGO: "स्वयंसेवी संस्था (NGO)",
+    roleAdmin: "आपदा प्रशासक",
+
+    // Landing Page
+    heroTitle: "बाढ़ चेतावनी से कृषि पुनरुद्धार तक",
+    heroSubtitle: "कोसी बेसिन के लिए प्रारंभिक बाढ़ चेतावनी, 24–48 घंटे पूर्व फसल निकासी, एआई द्वारा फसल क्षति सत्यापन और मृदा सुधार का एकीकृत मंच।",
+    btnCheckFloodRisk: "बाढ़ जोखिम जांचें",
+    btnReportCropDamage: "फसल क्षति दर्ज करें",
+    btnGetRecoveryPlan: "मृदा सुधार योजना पाएं",
+    btnEmergencyDashboard: "आपातकालीन डैशबोर्ड",
+    evacuationCountdown: "फसल सुरक्षित निकालने का अनुमानित समय",
+    hoursRemaining: "घंटे जलस्तर चरम पर पहुंचने से पहले",
+    liveDischarge: "बीरपुर बैराज जल प्रवाह",
+    affectedVillagesCount: "निगरानी में संवेदनशील गांव",
+    evacuatedTonnage: "सुरक्षित निकाली गई फसल (टन)",
+    claimsProcessed: "एआई-सत्यापित एवं स्वीकृत दावे",
+
+    // Solution Cards
+    pillar1Title: "प्रारंभिक बाढ़ चेतावनी",
+    pillar1Desc: "खेतों तक पानी पहुंचने से पहले लाइव रिवर गेज, जल प्रवाह ग्राफ और ऑफलाइन रेडियो/मेश नेटवर्क द्वारा अलर्ट।",
+    pillar2Title: "पूर्व-बाढ़ लॉजिस्टिक्स",
+    pillar2Desc: "24–48 घंटे की महत्वपूर्ण अवधि में कटाई की गई फसल, बीज, मवेशी और पंपों को सुरक्षित गोदामों तक पहुंचाने का जीपीएस नेटवर्क।",
+    pillar3Title: "एआई फसल क्षति सत्यापन",
+    pillar3Desc: "खेत की तस्वीरों से उपग्रह व कंप्यूटर विजन द्वारा नुकसान प्रतिशत और बालू की परत की जांच कर तुरंत मुआवजा तैयार करना।",
+    pillar4Title: "मृदा एवं कृषि पुनरुद्धार",
+    pillar4Desc: "सैटेलाइट मैपिंग + आईओटी मिट्टी जांच + एआई कृषि विशेषज्ञ सलाह से बाढ़ के बाद खेत को तुरंत दोबारा उपजाऊ बनाना।",
+
+    // 12 Step Flow
+    flowTitle: "संपूर्ण बाढ़ प्रतिक्रिया एवं कृषि पुनरुद्धार चक्र",
+    flowSubtitle: "कोसी मंथन तकनीक, जमीनी वाहनों और सरकारी तंत्र को चेतावनी से लेकर अगली फसल तक कैसे जोड़ता है।",
+
+    // Early Warning Module
+    ewTitle: "कोसी बेसिन पूर्व चेतावनी एवं जल स्तर निगरानी",
+    ewSubtitle: "बीरपुर बैराज और कोसी तटबंधों के साथ लाइव जल स्तर, डिस्चार्ज, गेज सेंसर और सुरक्षित राहत शिविर।",
+    riskSafe: "सुरक्षित स्तर",
+    riskWatch: "निगरानी अलर्ट",
+    riskWarning: "बाढ़ चेतावनी",
+    riskCritical: "अत्यधिक खतरे का निशान",
+    currentDischarge: "वर्तमान जल प्रवाह",
+    dangerMark: "खतरे का निशान",
+    waterTrend: "जलस्तर की प्रवृत्ति",
+    safeShelters: "चिह्नित सुरक्षित राहत शिविर",
+    offlineRelayActive: "ऑफलाइन मेश एवं एफएम रेडियो प्रसारण सक्रिय (87.5 MHz / LoRa नोड KOSI-04)",
+
+    // Logistics Module
+    logisticsTitle: "पूर्व-बाढ़ फसल एवं उपकरण निकासी लॉजिस्टिक्स",
+    logisticsSubtitle: "बाढ़ आने से 24–48 घंटे पहले ट्रैक्टरों, मिनी ट्रकों और सुरक्षित गोदामों को सक्रिय कर अन्न व उपकरणों की रक्षा।",
+    requestTransportBtn: "फसल निकासी वाहन मांगें",
+    transporterFleet: "उपलब्ध वाहन बेड़ा",
+    evacFormTitle: "किसान फसल एवं उपकरण निकासी आवेदन",
+    cropTypeLabel: "निकासी के लिए फसल / सामग्री",
+    quantityLabel: "मात्रा (टन या बोरियां)",
+    equipmentLabel: "उपकरण (पंपसेट, थ्रेशर, मवेशी)",
+    destinationLabel: "गंतव्य सुरक्षित गोदाम",
+    urgencyLabel: "आपातकालीन स्तर",
+    submitEvacRequest: "वाहन अनुरोध प्रसारित करें",
+    matchedStatus: "वाहन चालक से मिलान हुआ",
+    pendingStatus: "निकटतम वाहन की खोज जारी",
+    acceptRide: "स्वीकार करें एवं रवाना हों",
+
+    // Damage Report Module
+    damageTitle: "एआई आधारित फसल क्षति सत्यापन",
+    damageSubtitle: "खेत की तस्वीरें अपलोड करें और तुरंत नुकसान प्रतिशत, बालू जमाव और मुआवजा दस्तावेज प्राप्त करें।",
+    uploadPhotos: "खेत की क्षति तस्वीरें अपलोड करें",
+    analyzingAI: "कोसी-विजन एआई द्वारा क्षति का विश्लेषण जारी...",
+    aiAssessmentResult: "एआई क्षति विश्लेषण परिणाम",
+    estimatedLoss: "अनुमानित फसल क्षति",
+    aiConfidence: "एआई मॉडल विश्वसनीयता",
+    vegetativeRot: "पौधों का सड़ना / नुकसान",
+    siltDeposition: "बालू / गाद जमाव की गहराई",
+    generateClaimBtn: "सत्यापित मुआवजा दावा तैयार करें",
+
+    // Claims Module
+    claimsTitle: "मुआवजा एवं प्रत्यक्ष लाभ अंतरण (DBT) पोर्टल",
+    claimsSubtitle: "पारदर्शी सरकारी व बीमा निपटान प्रणाली, डिजिटल सत्यापन मुहर और सीधे खाते में राशि।",
+    claimId: "दावा संख्या",
+    farmer: "किसान का नाम",
+    crop: "फसल व किस्म",
+    lossPct: "क्षति %",
+    estLossValue: "अनुमानित नुकसान (₹)",
+    status: "प्रक्रिया स्थिति",
+    action: "कार्रवाई",
+    approveClaim: "मुआवजा स्वीकृत करें",
+    rejectClaim: "पुनः सर्वेक्षण हेतु भेजें",
+    viewCertificate: "आधिकारिक प्रमाण पत्र देखें",
+    dbtStatus: "प्रत्यक्ष बैंक अंतरण (DBT)",
+
+    // Soil Recovery Module
+    soilTitle: "बाढ़ोपरांत मृदा सुधार एवं एआई कृषि सलाह",
+    soilSubtitle: "सैटेलाइट बालू मैपिंग, आईओटी मिट्टी पोषक तत्व जांच (NPK और pH) और खेत सुधार योजना।",
+    soilHealthScore: "मृदा स्वास्थ्य सूचकांक",
+    sandThickness: "बालू जमाव की मोटाई",
+    recoveryCrop: "अनुशंसित सुधार फसल",
+    aiPrescription: "एआई खाद एवं उपचार नुस्खा",
+    recoveryTimeline: "खेत सुधार की अनुमानित अवधि",
+    generateSoilPlan: "मृदा सुधार योजना बनाएं",
+
+    // Emergency Module
+    emergencyTitle: "आपातकालीन राहत एवं बचाव कमांड रूम",
+    emergencySubtitle: "एनडीआरएफ/एसडीआरएफ नौका बेड़ा, ड्रोन निगरानी और फंसे नागरिकों का आपातकालीन बचाव।",
+    trappedPersons: "बचाव की प्रतीक्षा में नागरिक",
+    boatFleetTitle: "बचाव नौका बेड़ा",
+    droneSurveillanceTitle: "ड्रोन हवाई सर्वेक्षण",
+    dispatchBoat: "बचाव नौका रवाना करें",
+    markRescued: "सुरक्षित निकाला गया चिह्नित करें",
+
+    // Farmer Dashboard
+    farmerDashTitle: "किसान डैशबोर्ड - बाढ़ सुरक्षा एवं फसल पुनरुद्धार",
+    farmerWelcome: "नमस्ते, किसान रमेश कुमार",
+    actionEmergencySOS: "आपातकालीन SOS",
+    actionRequestTransport: "वाहन मांगें",
+    actionReportDamage: "फसल क्षति दर्ज करें",
+    actionSoilHealth: "मिट्टी स्वास्थ्य देखें",
+    actionTrackClaim: "मुआवजा स्थिति देखें",
+
+    // Admin Dashboard
+    adminTitle: "राज्य आपदा एवं पुनरुद्धार कमांड सेंटर",
+    adminSubtitle: "सुपौल, सहरसा, मधेपुरा एवं खगड़िया जिलों के लिए बहु-स्तरीय प्रशासनिक निगरानी।",
+    filterDistrict: "जिला फिल्टर",
+    filterBlock: "प्रखंड फिल्टर",
+    filterRisk: "जोखिम स्तर फिल्टर",
+    totalSubmergedHa: "कुल जलमग्न रकबा (हेक्टेयर)",
+    totalLossVal: "कुल फसल क्षति मूल्यांकन",
+    evacTonnageStat: "सुरक्षित निकाला गया अनाज",
+    dbtDisbursedStat: "डीबीटी द्वारा वितरित राशि"
+  }
+};
