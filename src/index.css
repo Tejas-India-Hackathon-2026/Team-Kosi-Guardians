@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-emerald: #059669;
+  --kosi-water: #0284c7;
+  --warning-amber: #d97706;
+  --danger-crimson: #dc2626;
+  --bg-dark: #090e17;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --border-glass: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 50% 0%, #0f172a 0%, #060b13 100%);
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 14px 36px -8px rgba(14, 165, 233, 0.2);
+  transform: translateY(-2px);
+}
+
+.glass-emerald {
+  background: rgba(6, 78, 59, 0.3);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.glass-amber {
+  background: rgba(120, 53, 15, 0.3);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.glass-crimson {
+  background: rgba(127, 29, 29, 0.35);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+.glass-sky {
+  background: rgba(12, 74, 110, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Radar Pulse Animation */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}
+
+.animate-radar {
+  animation: radar-pulse 2.5s infinite ease-in-out;
+}
+
+/* Water Ripple Animation */
+@keyframes water-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-water-gradient {
+  background: linear-gradient(270deg, #0369a1, #0d9488, #0284c7, #065f46);
+  background-size: 400% 400%;
+  animation: water-flow 12s ease infinite;
+}
+
+/* Glow Badges */
+.badge-glow-critical {
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+}
+
+.badge-glow-warning {
+  background: rgba(217, 119, 6, 0.2);
+  border: 1px solid #f59e0b;
+  color: #fcd34d;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+.badge-glow-safe {
+  background: rgba(5, 150, 105, 0.2);
+  border: 1px solid #10b981;
+  color: #6ee7b7;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090e17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Leaflet Map overrides for dark mode style */
+.leaflet-container {
+  font-family: 'Inter', sans-serif !important;
+  border-radius: 0.75rem;
+  z-index: 10;
+}
+
+/* Print Stylesheet for Claim Dossier */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-claim-certificate, #printable-claim-certificate * {
+    visibility: visible;
+  }
+  #printable-claim-certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
