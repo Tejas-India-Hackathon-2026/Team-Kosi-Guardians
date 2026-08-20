@@ -1,0 +1,221 @@
+// Prisma Schema for KosiManthan Disaster Management Platform
+datasource db {
+  provider = "postgresql" // or "sqlite" for local zero-config testing
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  FARMER
+  TRANSPORTER
+  NGO
+  OFFICER
+  ADMIN
+}
+
+enum RiskLevel {
+  SAFE
+  WATCH
+  WARNING
+  CRITICAL
+}
+
+enum ClaimStatus {
+  SUBMITTED
+  AI_VERIFIED
+  OFFICER_REVIEW
+  APPROVED
+  DISBURSED
+  REJECTED
+}
+
+enum TransportStatus {
+  PENDING
+  MATCHED
+  IN_TRANSIT
+  COMPLETED
+  CANCELLED
+}
+
+enum RescueStatus {
+  REPORTED
+  ASSIGNED
+  BOAT_DISPATCHED
+  RESCUED
+  RESOLVED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  phone     String   @unique
+  email     String?  @unique
+  password  String
+  role      Role     @default(FARMER)
+  village   String?
+  district  String?  @default("Supaul")
+  location  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  farmerProfile Farmer?
+}
+
+model Farmer {
+  id              String            @id @default(uuid())
+  userId          String            @unique
+  user            User              @relation(fields: [userId], references: [id])
+  landArea        Float // in acres
+  crops           String // comma-separated crops
+  village         String
+  district        String            @default("Supaul")
+  gpsLat          Float
+  gpsLng          Float
+  aadhaarMask     String?
+  createdAt       DateTime          @default(now())
+
+  transportReqs   TransportRequest[]
+  damageReports   DamageReport[]
+  soilTests       SoilTest[]
+}
+
+model FloodSensor {
+  id           String    @id
+  name         String
+  location     String
+  district     String
+  block        String
+  lat          Float
+  lng          Float
+  waterLevel   Float // in meters
+  dangerLevel  Float // in meters
+  discharge    String // e.g. "385,000 cusecs"
+  status       RiskLevel @default(SAFE)
+  trend        String?
+  battery      Int       @default(100)
+  lastUpdated  DateTime  @default(now())
+}
+
+model FloodAlert {
+  id         String    @id @default(uuid())
+  severity   RiskLevel @default(WARNING)
+  location   String
+  district   String
+  message    String
+  channel    String?   @default("Mesh Radio / LoRa Node 04")
+  issuedAt   DateTime  @default(now())
+  expiresAt  DateTime
+}
+
+model TransportRequest {
+  id                    String          @id @default(uuid())
+  farmerId              String
+  farmer                Farmer          @relation(fields: [farmerId], references: [id])
+  farmerName            String
+  phone                 String
+  village               String
+  pickupLocation        String
+  pickupLat             Float
+  pickupLng             Float
+  destination           String
+  crop                  String
+  quantity              String
+  equipment             String?
+  urgency               String          @default("HIGH")
+  vehicleRequired       String?
+  status                TransportStatus @default(PENDING)
+  assignedTransporterId String?
+  transporterName       String?
+  etaMinutes            Int?
+  createdAt             DateTime        @default(now())
+}
+
+model DamageReport {
+  id               String          @id @default(uuid())
+  farmerId         String
+  farmer           Farmer          @relation(fields: [farmerId], references: [id])
+  farmerName       String
+  kisanAadhaar     String?
+  crop             String
+  village          String
+  district         String          @default("Supaul")
+  landAreaAcres    Float
+  submergedAcres   Float
+  floodDepthCm     Float
+  submersionDays   Int             @default(3)
+  imageUrl         String?
+  damagePercentage Float
+  aiConfidence     Float
+  impactLevel      String          @default("HIGH")
+  vegetativeLoss   String?
+  siltDepositionCm Float?
+  waterloggingScore String?
+  estimatedLossINR Float
+  claimStatus      ClaimStatus     @default(SUBMITTED)
+  officerRemarks   String?
+  submittedAt      DateTime        @default(now())
+
+  insuranceClaim   InsuranceClaim?
+}
+
+model InsuranceClaim {
+  id                    String       @id @default(uuid())
+  damageReportId        String       @unique
+  damageReport          DamageReport @relation(fields: [damageReportId], references: [id])
+  estimatedLoss         Float
+  approvedCompensation  Float?
+  status                ClaimStatus  @default(SUBMITTED)
+  dbtTransactionId      String?
+  submittedAt           DateTime     @default(now())
+  approvedAt            DateTime?
+}
+
+model SoilTest {
+  id             String        @id @default(uuid())
+  farmerId       String
+  farmer         Farmer        @relation(fields: [farmerId], references: [id])
+  plotLocation   String
+  district       String        @default("Supaul")
+  pH             Float
+  nitrogen       Float
+  phosphorus     Float
+  potassium      Float
+  moisture       Float
+  sedimentLevel  Float // sand/silt in cm
+  testedAt       DateTime      @default(now())
+
+  recoveryPlans  RecoveryPlan[]
+}
+
+model RecoveryPlan {
+  id                       String    @id @default(uuid())
+  soilTestId               String
+  soilTest                 SoilTest  @relation(fields: [soilTestId], references: [id])
+  soilHealthScore          Int
+  recommendedCrop          String
+  fertilizerRecommendation String
+  primaryAction            String
+  estimatedRecoveryWeeks   Int
+  aiRecommendation         String
+  createdAt                DateTime  @default(now())
+}
+
+model RescueRequest {
+  id                String       @id @default(uuid())
+  name              String
+  phone             String
+  location          String
+  lat               Float
+  lng               Float
+  priority          RiskLevel    @default(CRITICAL)
+  peopleCount       Int          @default(1)
+  hasInfants        Boolean      @default(false)
+  hasElderly        Boolean      @default(false)
+  waterLevelRising  String?
+  status            RescueStatus @default(REPORTED)
+  assignedTeam      String?
+  createdAt         DateTime     @default(now())
+}
