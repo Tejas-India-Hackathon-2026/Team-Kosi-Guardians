@@ -1,0 +1,31 @@
+{
+  "name": "kosimanthan-platform",
+  "version": "1.0.0",
+  "description": "KosiManthan – Flood Relief & Agricultural Recovery Platform for Kosi Basin, Bihar",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "node server/server.js",
+    "seed": "node server/seed.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": [
+    "flood-relief",
+    "disaster-management",
+    "kosi-basin",
+    "agriculture-recovery",
+    "ai-crop-damage",
+    "iot-soil-health",
+    "logistics-evacuation"
+  ],
+  "author": "KosiManthan Initiative",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
